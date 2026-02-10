@@ -3,6 +3,33 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@manufactura/domain": [
+        "packages/domain/src/index.ts"
+      ],
+      "@manufactura/domain/*": [
+        "packages/domain/src/*"
+      ],
+      "@manufactura/application": [
+        "packages/application/src/index.ts"
+      ],
+      "@manufactura/application/*": [
+        "packages/application/src/*"
+      ],
+      "@manufactura/infrastructure": [
+        "packages/infrastructure/src/index.ts"
+      ],
+      "@manufactura/infrastructure/*": [
+        "packages/infrastructure/src/*"
+      ],
+      "@manufactura/shared": [
+        "packages/shared/src/index.ts"
+      ],
+      "@manufactura/shared/*": [
+        "packages/shared/src/*"
+      ]
+    },
     "lib": [
       "ES2022",
       "DOM"

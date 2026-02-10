@@ -4,9 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "echo \"worker dev command will be added in next iteration\"",
-    "build": "echo \"worker build command will be added in next iteration\"",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@manufactura/infrastructure": "workspace:*",
+    "@manufactura/shared": "workspace:*",
+    "dotenv": "^16.4.7"
   }
 }
