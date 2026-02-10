@@ -1,0 +1,11 @@
+{
+  "name": "@manufactura/application",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"application build command will be added in next iteration\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

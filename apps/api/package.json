@@ -1,0 +1,12 @@
+{
+  "name": "@manufactura/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"api dev command will be added in next iteration\"",
+    "build": "echo \"api build command will be added in next iteration\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

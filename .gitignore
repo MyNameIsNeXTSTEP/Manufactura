@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnp.*
+
+# local env
+.env.local
+.env.*.local
+
+# build outputs
+dist/
+build/
+.turbo/
+.cache/
+coverage/
+
+# logs
+*.log
+yarn-error.log
+
+# editor/system
+.DS_Store
+.idea/
+.vscode/

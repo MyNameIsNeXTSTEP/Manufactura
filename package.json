@@ -1,0 +1,23 @@
+{
+  "name": "manufactura",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@4.6.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspaces foreach -pt run dev",
+    "build": "yarn workspaces foreach -pt run build",
+    "lint": "yarn workspaces foreach -pt run lint",
+    "typecheck": "yarn workspaces foreach -pt run typecheck"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0"
+  }
+}
