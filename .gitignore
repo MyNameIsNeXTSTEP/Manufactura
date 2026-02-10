@@ -3,8 +3,7 @@ node_modules/
 .pnp.*
 
 # local env
-.env.local
-.env.*.local
+.env
 
 # build outputs
 dist/
