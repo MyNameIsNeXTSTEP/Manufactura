@@ -15,11 +15,11 @@
     "build": "tsc -p tsconfig.json",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "prisma:generate": "prisma generate --schema prisma/schema.prisma",
-    "prisma:migrate:create": "prisma migrate dev --create-only --name baseline --schema prisma/schema.prisma",
-    "prisma:migrate:rollback": "prisma migrate resolve --rolled-back",
-    "prisma:migrate:dev": "prisma migrate dev --schema prisma/schema.prisma",
-    "prisma:migrate:deploy": "prisma migrate deploy --schema prisma/schema.prisma",
+    "prisma:generate": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js generate --schema prisma/schema.prisma",
+    "prisma:migrate:create": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate dev --create-only --name init --schema prisma/schema.prisma",
+    "prisma:migrate:rollback": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate resolve --rolled-back",
+    "prisma:migrate:dev": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate dev --schema prisma/schema.prisma",
+    "prisma:migrate:deploy": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate deploy --schema prisma/schema.prisma",
     "prisma:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
