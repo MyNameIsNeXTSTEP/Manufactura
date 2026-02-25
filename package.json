@@ -8,15 +8,22 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspaces foreach -pt run dev",
-    "build": "yarn workspaces foreach -pt run build",
-    "lint": "yarn workspaces foreach -pt run lint",
-    "typecheck": "yarn workspaces foreach -pt run typecheck"
+    "dev": "yarn workspaces foreach -pt --topological-dev run dev",
+    "build": "yarn workspaces foreach -pt --topological-dev run build",
+    "lint": "yarn workspaces foreach -pt --topological-dev run lint",
+    "typecheck": "yarn workspaces foreach -pt --topological-dev run typecheck",
+    "db:generate": "yarn workspace @manufactura/infrastructure prisma:generate",
+    "db:migrate:create": "yarn workspace @manufactura/infrastructure prisma:migrate:create",
+    "db:migrate:dev": "yarn workspace @manufactura/infrastructure prisma:migrate:dev",
+    "db:migrate:deploy": "yarn workspace @manufactura/infrastructure prisma:migrate:deploy",
+    "db:migrate:rollback": "yarn workspace @manufactura/infrastructure prisma:migrate:rollback",
+    "db:seed": "yarn workspace @manufactura/infrastructure prisma:seed"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@types/node": "^22.13.1",
     "eslint": "^9.19.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.22.0"
   }

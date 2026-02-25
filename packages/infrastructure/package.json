@@ -3,9 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "echo \"infrastructure build command will be added in next iteration\"",
+    "build": "tsc -p tsconfig.json",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prisma:generate": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js generate --schema prisma/schema.prisma",
+    "prisma:migrate:create": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate dev --create-only --name init --schema prisma/schema.prisma",
+    "prisma:migrate:rollback": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate resolve --rolled-back",
+    "prisma:migrate:dev": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate dev --schema prisma/schema.prisma",
+    "prisma:migrate:deploy": "DOTENV_CONFIG_PATH=../../.env node -r dotenv/config ../../node_modules/prisma/build/index.js migrate deploy --schema prisma/schema.prisma",
+    "prisma:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@manufactura/shared": "workspace:*",
+    "@prisma/client": "^6.3.1",
+    "@supabase/supabase-js": "^2.48.1",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "prisma": "^6.3.1"
   }
 }
