@@ -1,3 +1,8 @@
+import { fileURLToPath } from "node:url";
+import { config } from "dotenv";
+
+config({ path: fileURLToPath(new URL("../../../../.env", import.meta.url)) });
+
 export const appEnv = {
   nodeEnv: process.env.NODE_ENV ?? "development",
   apiPort: Number(process.env.API_PORT ?? 3001),
@@ -6,7 +11,7 @@ export const appEnv = {
   supabaseSecretKey: process.env.SUPABASE_SECRET_KEY ?? "",
   supabaseProjectId: process.env.SUPABASE_PROJECT_ID ?? "",
   supabaseTxPoolUrl: process.env.SUPABASE_DATABASE_TRANSACTION_POOL_URL ?? "",
-  supabaseDirectUrl: process.env.SUPABASE_DATABASE_URL ?? ""
+  supabaseDirectUrl: process.env.SUPABASE_DIRECT_URL ?? ""
 } as const;
 
 export function assertRequiredEnv(): void {

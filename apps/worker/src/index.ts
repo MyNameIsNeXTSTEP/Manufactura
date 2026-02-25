@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { createSupabaseAdminClient, prisma } from "@manufactura/infrastructure";
 import { appEnv, assertRequiredEnv } from "@manufactura/shared";
 
