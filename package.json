@@ -8,10 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspaces foreach -pt --topological-dev run dev",
-    "build": "yarn workspaces foreach -pt --topological-dev run build",
-    "lint": "yarn workspaces foreach -pt --topological-dev run lint",
-    "typecheck": "yarn workspaces foreach -pt --topological-dev run typecheck",
+    "dev": "yarn workspaces foreach -A -pt --topological-dev run dev",
+    "build": "yarn workspaces foreach -A -pt --topological-dev run build",
+    "lint": "yarn workspaces foreach -A -pt --topological-dev run lint",
+    "typecheck": "yarn workspaces foreach -A -pt --topological-dev run typecheck",
     "db:generate": "yarn workspace @manufactura/infrastructure prisma:generate",
     "db:migrate:create": "yarn workspace @manufactura/infrastructure prisma:migrate:create",
     "db:migrate:dev": "yarn workspace @manufactura/infrastructure prisma:migrate:dev",
